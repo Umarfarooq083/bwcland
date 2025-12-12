@@ -42,6 +42,7 @@ class PlotsController extends Controller
             ]);
 
             $apiResponse = json_decode($response->getBody(), true);
+            dd($apiResponse);
             $data['qr_data'] = $apiResponse['data'];
         } catch (\Exception $e) {
             $data['apiError'] = $e->getMessage();
