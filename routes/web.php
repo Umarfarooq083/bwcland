@@ -25,6 +25,6 @@ Route::middleware('auth')->group(function () {
     
 });
 
-Route::get('/qr-data', [PlotsController::class, 'plotsQRCode'])->name('plot.qrcode');
+Route::get('/data', [PlotsController::class, 'plotsQRCode'])->name('plot.qrcode');
 
 require __DIR__.'/auth.php';
