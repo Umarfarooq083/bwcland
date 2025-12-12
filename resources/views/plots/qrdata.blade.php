@@ -53,8 +53,8 @@
                         <td>{{ number_format($qr_data['plot_price'] , 2) }}</td>
                     </tr>
                     <tr>
-                        <th>Security Code</th>
-                        <td>{{ $qr_data['security_code'] }}</td>
+                        <th>Form No</th>
+                        <td>{{ $qr_data['form_no'] }}</td>
                     </tr>
                 </tbody>
             </table>
