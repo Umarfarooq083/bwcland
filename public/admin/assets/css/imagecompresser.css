@@ -1,0 +1,77 @@
+.image-box {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background: #fff;
+    min-height: 250px;
+    max-height: 250px;
+    text-align: center;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.image-info {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    column-gap: 10px;
+    row-gap: 5px;
+    color: #000;
+}
+
+.preview-grid {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.single_modal .preview-grid {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+}
+.single_modal #comparisonSection{
+    gap: 15px;
+}
+.single_modal #compressedPreview{
+    height: 250px;
+}
+.single_modal .hr{
+    display: none;
+}
+.single_modal .preview_wrap{
+    gap: 15px;
+    row-gap: 15px;
+}
+.multiple_modal  .preview_wrap{
+    flex-direction: column;
+}
+.preview{
+    width: 100%;
+    display: inline-flex;
+}
+.multiple_modal .preview{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+}
+.multiple_modal .image-box{
+    width: 250px;
+}

@@ -1,14 +1,21 @@
+@extends('admin.layout.layout')
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+@section('title', 'Plot Details') 
 
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h3 class="text-lg font-semibold mb-4">Plot Detail</h3>
-                    <table class="table table-striped table-hover">
-                        <thead class="table-dark">
+@section('content')
+    <div class="container">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="font-weight-bold text-dark text-center">Plot Details</h1>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="card">
+                <div class="table-responsive">
+                    <table id="tableList" class="table table-bordered nowrap datatable table-custom w-100 m-0">
+                        <thead class="thead-dark">
                             <tr>
                                 <th>Sector</th>
                                 <th>Street Number</th>
@@ -16,24 +23,22 @@
                                 <th>Reg No</th>
                                 <th>Plot Size</th>
                                 <th>Price</th>
-                               
                             </tr>
                         </thead>
                         <tbody>
-                          
-                                <tr>
-                                    <td>{{ $PlotsData->sector }}</td>
-                                    <td>{{ $PlotsData->street_number }}</td>
-                                    <td>{{ $PlotsData->plot_number }}</td>
-                                    <td>{{ $PlotsData->reg_no }}</td>
-                                    <td>{{ $PlotsData->plot_size }}</td>
-                                    <td>{{ number_format($PlotsData->plot_price, 2) }}</td>
-                                </tr>
-                           
+                            <tr>
+                                <td>{{ $PlotsData->sector }}</td>
+                                <td>{{ $PlotsData->street_number }}</td>
+                                <td>{{ $PlotsData->plot_number }}</td>
+                                <td>{{ $PlotsData->reg_no }}</td>
+                                <td>{{ $PlotsData->plot_size }}</td>
+                                <td>{{ number_format($PlotsData->plot_price, 2) }}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+@endsection
 
