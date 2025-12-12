@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Plots;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use GuzzleHttp\Client;
 
 class PlotsController extends Controller
 {
@@ -24,9 +25,29 @@ class PlotsController extends Controller
 
     public function plotsQRCode(Request $request)
     {
-        $id = Crypt::decrypt($request->id);
-        $PlotsData = Plots::where('id',$id)->first();
-        $data['PlotsData'] = $PlotsData;
-        return view('plots/qrdata',$data);
+        $id = $request->id;
+        $data = []; 
+        try {
+            $client = new \GuzzleHttp\Client();
+            $response = $client->get('https://server.blueworldcity.com/api/downtown/search-data', [
+                'headers' => [
+                    'last_login_token' => 'bd12321',
+                    'Accept' => 'application/json',
+                ],
+                'query' => [
+                    'data' => $id,
+                ],
+                'verify' => false,
+                'timeout' => 30, 
+            ]);
+
+            $apiResponse = json_decode($response->getBody(), true);
+            $data['apiResponse'] = $apiResponse;
+
+        } catch (\Exception $e) {
+            $data['apiError'] = $e->getMessage();
+        }
+        dd($data['apiResponse']['meta']['data']);
+        return view('plots/qrdata', $data);
     }
 }
