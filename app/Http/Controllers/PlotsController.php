@@ -38,11 +38,11 @@ class PlotsController extends Controller
                     'data' => $id,
                 ],
                 'verify' => false,
-                'timeout' => 30, 
+                'timeout' => 60, 
             ]);
 
             $apiResponse = json_decode($response->getBody(), true);
-            $data['qr_data'] = $apiResponse;
+            $data['qr_data'] = $apiResponse['data'];
         } catch (\Exception $e) {
             $data['apiError'] = $e->getMessage();
         }

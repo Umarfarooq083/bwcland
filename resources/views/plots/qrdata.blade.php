@@ -28,34 +28,33 @@
                         <th colspan="2">Booking Form Details</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr>
                         <th>Sector</th>
-                        <td>{{ $qr_data['data']['sector'] }}</td>
+                        <td>{{ $qr_data['sector'] }}</td>
                     </tr>
                     <tr>
                         <th>Street Number</th>
-                        <td>{{ $qr_data['data']['street_number'] }}</td>
+                        <td>{{ $qr_data['street_number'] }}</td>
                     </tr>
                     <tr>
                         <th>Plot Number</th>
-                        <td>{{ $qr_data['data']['plot_number'] }}</td>
+                        <td>{{ $qr_data['plot_number'] }}</td>
                     <tr>
                         <th>Reg No</th>
-                        <td>{{ $qr_data['data']['reg_no'] }}</td>
+                        <td>{{ $qr_data['reg_no'] }}</td>
                     </tr>
                     <tr>
                         <th>Plot Size</th>
-                        <td>{{ $qr_data['data']['plot_size'] }}</td>
+                        <td>{{ $qr_data['plot_size'] }}</td>
                     </tr>
                     <tr>
                         <th>Price</th>
-                        <td>{{ number_format($qr_data['data']['plot_price'] , 2) }}</td>
+                        <td>{{ number_format($qr_data['plot_price'] , 2) }}</td>
                     </tr>
                     <tr>
                         <th>Security Code</th>
-                        <td>{{ $qr_data['data']['security_code'] }}</td>
+                        <td>{{ $qr_data['security_code'] }}</td>
                     </tr>
                 </tbody>
             </table>
